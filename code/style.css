@@ -1,0 +1,30 @@
+#channels {
+  display: flex;
+  justify-content: center;
+}
+
+.allChannels > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1em;
+  background: pink;
+  border-radius: 1em;
+  box-shadow: 10px 8px 6px -3px rgba(0, 0, 0, 0.4);
+  width: 28em;
+  height: 8em;
+}
+
+.name {
+  text-align: center;
+}
+
+img {
+  border-radius: 5%;
+  opacity: 60%;
+}
+
+img:hover {
+  opacity: 100%;
+}
