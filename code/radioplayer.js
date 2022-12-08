@@ -51,6 +51,8 @@ const searchInput = document.querySelector(".search");
 
 //displayChannels();
 
+// Stretch goals
+
 searchInput.addEventListener("input", () => {
     if (searchInput.value) {
         displayChannels(5, searchInput.value);
