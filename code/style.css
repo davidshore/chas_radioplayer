@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: beige;
+}
+
+.allChannels {
+  height: 1000px;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.radioContainer {
+  display: flex;
+  border: 1px solid black;
+  width: fit-content;
+  margin: 1em;
+}
+
+.radioName {
+  font-size: 1.5em;
+  padding: 1em;
+}
