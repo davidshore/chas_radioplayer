@@ -1,0 +1,14 @@
+div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  width: 60%;
+}
+
+img {
+  width: 20%;
+}
+
+audio {
+  align-self: center;
+}
