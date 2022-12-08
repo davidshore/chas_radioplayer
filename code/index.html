@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Radio Player</title>
-  </head>
 
-  <body>
-    <script src="radioplayer.js"></script>
-    <div id="channels"></div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="radioplayer.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Radio Player</title>
+</head>
+
+<body>
+  <h1>Radio Player</h1>
+  <div id="channels">
+    <div class="channel placeholder">
+      <img src="IMG/icone-x-noir.png" alt="No Channel Loaded">
+      <div class="player">
+        <h2>XXX</h2>
+        <audio controls></audio>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
