@@ -1,0 +1,23 @@
+.channel div {
+  display: flex;
+  flex-direction: row;
+  background-color: #75da75;
+  justify-content: space-between;
+  margin: 15px;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+img {
+  width: 30%;
+  margin: 10px;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.divTag {
+  display: flex;
+  flex-direction: column;
+}
