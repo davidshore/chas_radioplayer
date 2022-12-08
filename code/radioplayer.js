@@ -8,12 +8,32 @@
 // <audio controls>
 //   <source src="" type="audio/mpeg" />
 // </audio>
-const channelUrl = 'https://api.sr.se/api/v2/channels/?format=json';
-const p1 = document.querySelector('.p1')
-const click = document.querySelector('.click');
-click.addEventListener('click',()=>{
-    fetch(channelUrl)
-    .then(response=> response.json())
-    .then(radioData=>console.log(radioData.channels[1].id))
-    p1.textContent +=` ${ radioData.channels[1].id }`
-})
+
+
+const channelsInfo = 'https://api.sr.se/api/v2/channels/?format=json';
+const channelsList = document.querySelector('#channels');
+const nextBtn = document.querySelector('.nextBtn');
+const allChannels = document.querySelector('.all-channels');
+let index = 0;
+
+fetch(channelsInfo)
+.then(response=> response.json())
+.then(radioData=>{ console.log(radioData.channels)
+    nextBtn.addEventListener('click',()=>{
+        const radioChannels = radioData.channels[index]
+        index++ ;
+        nextBtn.textContent = ' Next Channel'
+        channelsList.innerHTML = 
+        ` <div><img src="${radioChannels.image}" alt=""></div>
+        <div>
+            <h1>${radioChannels.name}</h1> 
+            <audio controls>
+                 <source src="${radioChannels.liveaudio.url}" type="audio/mpeg" />
+            </audio>
+             <h4>${radioChannels.tagline}</h4> 
+        </div>`
+    });
+     
+});
+  
+
