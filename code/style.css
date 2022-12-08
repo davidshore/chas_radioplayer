@@ -12,9 +12,19 @@ p {
     color: rgb(219, 219, 235);
 }
 
+h1 {
+    font-size: 6rem;
+    color: rgb(219, 219, 235);
+}
+
+h2 {
+    font-size: 2rem;
+    color: rgb(219, 219, 235);
+}
+
 .logo {
-    width: 12rem;
-    height: 12rem;
+    width: 15rem;
+    height: 15rem;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -25,7 +35,8 @@ p {
 
 .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .channels-container {
@@ -53,7 +64,7 @@ p {
     padding-left: 1rem;
 }
 
-.tagline {
+.text {
     justify-self: center;
     align-self: center;
     padding: 1rem;

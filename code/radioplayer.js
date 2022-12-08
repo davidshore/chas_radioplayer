@@ -16,15 +16,16 @@ const getRadioChannels = async () => {
     if (response.ok) {
 
         const radioJSON = await response.json();
-        console.log(radioJSON);
 
         for (let i = 0; i < radioJSON.channels.length; i++) {
 
             const logo = radioJSON.channels[i].image;
+            const title = radioJSON.channels[i].name;
             const tagline = radioJSON.channels[i].tagline;
             const audiostream = radioJSON.channels[i].liveaudio.url;
             const color = radioJSON.channels[i].color;
-            drawChannel(logo, tagline, color, audiostream);
+
+            drawChannel(logo, title, tagline, color, audiostream);
 
         }
 
@@ -33,13 +34,16 @@ const getRadioChannels = async () => {
     }
 }
 
-const drawChannel = (logo, tagline, color, audiostream) => {
+const drawChannel = (logo, title, tagline, color, audiostream) => {
 
     const html = `
     <div class="channel">
         <div class="logo" style="background-image: url(${logo})"></div>
         <div class="audio-container" style="border-left: 0.1rem solid #${color};">
-            <div class="tagline"><p>${tagline}</p></div>
+            <div class="text">
+            <h2>${title}</h2>
+            <p>${tagline}</p>
+            </div>
             <div class="audio-player">
                 <audio controls preload="auto">
                     <source src="${audiostream}" type="audio/mpeg" />
