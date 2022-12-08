@@ -1,0 +1,93 @@
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(135, 135, 147);
+}
+
+p {
+    font-size: 1.6rem;
+    color: rgb(219, 219, 235);
+}
+
+h1 {
+    font-size: 6rem;
+    color: rgb(219, 219, 235);
+}
+
+h2 {
+    font-size: 2rem;
+    color: rgb(219, 219, 235);
+}
+
+.logo {
+    width: 15rem;
+    height: 15rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    justify-self: center;
+    align-self: center;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.channels-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80vw;
+    background-color: rgb(42, 42, 55);
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.channel {
+    background-color: rgb(60, 60, 70);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+}
+
+.audio-container {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    margin: 2rem 1rem;
+    padding-left: 1rem;
+}
+
+.text {
+    justify-self: center;
+    align-self: center;
+    padding: 1rem;
+}
+
+.audio-player {
+    margin: 0 1rem 0rem 1rem;
+}
+
+audio {
+    width: 100%;
+}
+
+button {
+    background-color: rgb(60, 60, 70);
+    color: rgb(219, 219, 235);
+    border: 0.1rem solid rgb(109, 109, 119);
+    border-radius: 2rem;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+button:hover {
+    background-color: rgb(219, 219, 235);
+    color: rgb(60, 60, 70);
+}
