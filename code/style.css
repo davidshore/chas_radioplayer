@@ -19,13 +19,12 @@
 .name {
   text-align: center;
 }
-img {
-  border-radius: 5%;
-}
 
 img {
+  border-radius: 5%;
   opacity: 60%;
 }
+
 img:hover {
   opacity: 100%;
 }
