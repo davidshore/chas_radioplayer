@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    transition: all 0.3s;
+}
+.radip-player{
+    overflow-y: scroll;
+    position: relative;
+    width: 80%;
+    margin: auto;
+    min-height: 80vh;
+    margin-top: 60px;
+    background-image: url('https://img.freepik.com/free-vector/music-speaker-with-wave-equalizer-frequency-background_1017-32308.jpg?w=1380&t=st=1670536470~exp=1670537070~hmac=aff324d5ebde914c0a3bb54e2361bdec13015a5a0da3e79a6cba3bcd2f3c5d73');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 2px 3px 9px 3px rgb(183, 182, 182);
+}
+.radip-player:hover{
+    box-shadow: 2px 3px 19px 6px rgb(101, 100, 100);
+    transform: scale(1.1);
+}
+.channels{
+    display: flex;
+   flex-direction: column;
+}
+.channels-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+.channels-player{
+    flex-basis: 30%;
+}
+.channels-player h1,
+.channels-player audio{
+    display: flex;
+    margin: auto;
+    background-color:#41a1bd ;
+    padding: 20px;
+    justify-content: center;
+    width: 200px;
+    min-width: 100px;
+    font-weight: bold;
+    color: aliceblue;
+    text-align: center;
+    border-radius: 50px;
+}
+.channels-player audio{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    min-height: 100px;
+    width: 300px; 
+    max-width: 100%;
+    box-shadow: 2px 3px 7px 1px rgb(117, 115, 115);
+}
+.channels-player audio:hover{
+    box-shadow: 2px 3px 9px 4px rgb(78, 77, 77);
+}
+.channels-image{
+    flex-basis: 70%;
+}
+.channels-image img{
+    display: flex;
+    max-width: 100%;
+    width: auto;
+    height: 300px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 2px 3px 7px 1px rgb(117, 115, 115);
+}
+.channels-image img:hover{
+    box-shadow: 2px 3px 9px 4px rgb(78, 77, 77);
+}
+.channels-descript{
+    background-color:#41a1bd ;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    color: aliceblue;
+    min-height: 90px;
+}
+.nextBtn{
+    background-color:#41a1bd ;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: aliceblue;
+    border-radius: 50px;
+    position: absolute;
+    border: none;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50% ,-90%);
+    box-shadow: 2px 3px 7px 1px rgb(117, 115, 115);
+}
+.nextBtn:hover{
+    box-shadow: 2px 3px 9px 4px rgb(78, 77, 77);
+}
+
+@media screen and (max-width : 750px){
+    .channels-main{
+        flex-direction: column;
+        margin-top: 180px;
+    }
+    .channels-player audio{
+        margin-top: 10px;
+    }
+    .channels-descript{
+        margin: 10px;
+    }
+    .nextBtn{
+        top: 16%;
+    }
+}
