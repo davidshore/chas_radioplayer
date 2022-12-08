@@ -1,8 +1,20 @@
-// Steg 1. Gör en fetch till 'https://api.sr.se/api/v2/channels/?format=json'
+async function srApi() {
+    let response = await fetch('https://api.sr.se/api/v2/channels/?format=json');
 
-// Steg 2. loopa med tex forEach över data.channels - ta ut data och visa på html-sidan.
+    if(response.ok) {
+        let data = await response.json();
 
-// Steg 3. ta ut liveaudio.url från varje kanal och lägg i en audio tagg.
-// <audio controls>
-//   <source src="" type="audio/mpeg" />
-// </audio>
+
+const cha = document.querySelector('.channels');
+
+data.channels.forEach((aaa) => {
+    const div = document.createElement("div");
+    div.innerHTML = `<p> ${aaa.name} </p> <audio controls> <source src="${aaa.liveaudio.url}" type="audio/mpeg" /> </audio>`;
+    cha.appendChild(div);
+});
+    } else {
+        console.log("HTTP-Error: " + response.status);
+    }
+}
+
+srApi();
