@@ -11,27 +11,33 @@
 
 
 const channelsInfo = 'https://api.sr.se/api/v2/channels/?format=json';
-const channelsList = document.querySelector('#channels');
+const channels = document.querySelector('#channels');
 const nextBtn = document.querySelector('.nextBtn');
-const allChannels = document.querySelector('.all-channels');
 let index = 0;
 
 fetch(channelsInfo)
 .then(response=> response.json())
-.then(radioData=>{ console.log(radioData.channels)
+.then(radioData=>{ 
     nextBtn.addEventListener('click',()=>{
         const radioChannels = radioData.channels[index]
         index++ ;
+        if (index == radioData.channels.length){
+            index = 0;
+        }
         nextBtn.textContent = ' Next Channel'
-        channelsList.innerHTML = 
-        ` <div><img src="${radioChannels.image}" alt=""></div>
-        <div>
-            <h1>${radioChannels.name}</h1> 
-            <audio controls>
-                 <source src="${radioChannels.liveaudio.url}" type="audio/mpeg" />
-            </audio>
-             <h4>${radioChannels.tagline}</h4> 
-        </div>`
+        channels.innerHTML = 
+        ` <div class="channels-main">
+            <div class="channels-player" >
+                <h1>${radioChannels.name}</h1> 
+                <audio controls>
+                    <source src="${radioChannels.liveaudio.url}" type="audio/mpeg" />
+                </audio>
+            </div>
+            <div class="channels-image" >
+                <img src="${radioChannels.image}" alt="">
+            </div>
+        </div>
+        <div class="channels-descript"> <h4>${radioChannels.tagline}</h4> </div>`
     });
      
 });
