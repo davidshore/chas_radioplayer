@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+#channels {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.channel {
+    width: 477.36px;
+    margin: auto;
+    display: flex;
+    border: 0.2rem solid black;
+    align-items: center;
+
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem;
+    min-width: 0;
+}
+
+img {
+    box-sizing: content-box;
+    width: 120px;
+    border-right: 0.2rem solid black;
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.tagline {
+    white-space: nowrap;
+    /* overflow: hidden; */
+    margin-left: 0.2rem;
+    animation: scroll 25s linear infinite;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes scroll {
+    from {transform: translateX(316px);}
+    to {transform: translateX(-1495.59px);}
+}
