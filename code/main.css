@@ -1,0 +1,33 @@
+body {
+  background-color: darkcyan;
+}
+
+img {
+  max-width: 15%;
+  margin: 2px;
+}
+
+.container {
+  display: flex;
+  margin: auto;
+}
+
+.listRadio div {
+  display: flex;
+  flex-direction: row;
+  background-color: lightgoldenrodyellow;
+  justify-content: space-between;
+  margin: 10px;
+  max-width: 100%;
+  border-radius: 1rem;
+  padding: 5px;
+}
+
+p {
+  margin-left: 50px;
+}
+
+.thisChannel {
+  color: black;
+  align-items: center;
+}
