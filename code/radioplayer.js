@@ -1,4 +1,4 @@
-// Select loader
+  // Select loader
 let loader = document.querySelector("#loader");
 
 // Select inputfield
@@ -28,47 +28,36 @@ async function getData() {
 
         // Clear the channelContainer with each fetch
         const channelContainer = document.querySelector("#channels");
-        channelContainer.innerHTML = " ";
-          
+        channelContainer.innerHTML = "";
+        
+        // Loop through filtered channels
         filteredChannels.forEach((channel) => {
           
-          // Create div for each channel
+          // Create channel element and set a class to it
           const channelElement = document.createElement("div");
           channelElement.setAttribute("class", "channelElement");
           
-          // Create left div for the channel pic & set its classname and content:
-          const channelPicDiv = document.createElement("div");
-          channelPicDiv.setAttribute("class", "picDiv");
-          channelPicDiv.innerHTML = `<img src="${channel.image}" alt="Radio channel picture">`;
-          channelElement.appendChild(channelPicDiv);
+          // Add content to each channel element
+          channelElement.innerHTML = `
+          <div class="picDiv">
+              <img src="${channel.image}", alt="Radio channel picture">
+          </div>
+  
+          <div class="rightDiv", style=background-color:#${channel.color}>
+  
+              <div class="upperRightDiv"> 
+                  <h1>${channel.name}</h1>
+                  <p>${channel.tagline}</p>
+              </div>
+  
+              <div class="lowerRightDiv">
+                  <audio controls><source src="${channel.liveaudio.url}" type="audio/mpeg"/></audio>
+              </div>
+          </div>
+          `;
 
-          // Create right div to hold text and audio tag;
-          const channelRightDiv = document.createElement("div");
-          channelRightDiv.setAttribute("class", "rightDiv");
-          channelRightDiv.style.backgroundColor = `#${channel.color}`;
-          
-          // Create right upper div to hold channel name + tag
-          const upperRightDiv = document.createElement("div");
-          upperRightDiv.setAttribute("class", "upperRightDiv");
-          upperRightDiv.innerHTML = `
-          <h1>${channel.name}</h1>
-          <p>${channel.tagline}</p>`;
-          
-          // Create right lower div to hold channel audio tag
-          const lowerRightDiv = document.createElement("div");
-          lowerRightDiv.setAttribute("class", "lowerRightDiv");
-          lowerRightDiv.innerHTML = `
-          <audio controls><source src="${channel.liveaudio.url}" type="audio/mpeg"/></audio>`;
-
-          // append the upper & lower right divs to the main right div
-          channelRightDiv.appendChild(upperRightDiv);
-          channelRightDiv.appendChild(lowerRightDiv);
-
-          // append main right div to the channel element
-          channelElement.appendChild(channelRightDiv);
-
-          // append each channel div to the container div
-          channelContainer.appendChild(channelElement);
+        // append each channel div to the container div
+        channelContainer.appendChild(channelElement);
 
           // Hide all channels if inputfield is empty
           if (inputValue.length <= 0) {
@@ -77,4 +66,3 @@ async function getData() {
   })}
     getData();
   });
-
