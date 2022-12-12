@@ -3,11 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" /> -->
     <title>Radio Player</title>
   </head>
-
   <body>
-    <script src="radioplayer.js"></script>
+    <input
+      type="text"
+      id="inputField"
+      placeholder="Enter radio station name..."
+    />
+    <span id="loader">&nbsp;</span>
     <div id="channels"></div>
+    <script src="radioplayer.js"></script>
   </body>
 </html>

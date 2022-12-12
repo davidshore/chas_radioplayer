@@ -1,8 +1,68 @@
-// Steg 1. Gör en fetch till 'https://api.sr.se/api/v2/channels/?format=json'
+  // Select loader
+let loader = document.querySelector("#loader");
 
-// Steg 2. loopa med tex forEach över data.channels - ta ut data och visa på html-sidan.
+// Select inputfield
+const inputField = document.querySelector("#inputField");
 
-// Steg 3. ta ut liveaudio.url från varje kanal och lägg i en audio tagg.
-// <audio controls>
-//   <source src="" type="audio/mpeg" />
-// </audio>
+// Add eventlistener to the inputfield
+inputField.addEventListener("input", () => {
+
+// Store inputvalue in variable
+let inputValue = inputField.value.toUpperCase();
+
+// Show loader when user enters characters in inputfield
+loader.style.display="inline-block";
+
+// Fetch Radio Stations
+async function getData() {
+    const response = await fetch("https://api.sr.se/api/v2/channels/?format=json");
+    const data = await response.json();
+    
+    // Hide loader when fetch is done
+    loader.style.display="none";
+
+        // Filter channels with inputvalue
+        let filteredChannels = data.channels.filter((i) => {
+            return i.name.startsWith(inputValue);
+        });
+
+        // Clear the channelContainer with each fetch
+        const channelContainer = document.querySelector("#channels");
+        channelContainer.innerHTML = "";
+        
+        // Loop through filtered channels
+        filteredChannels.forEach((channel) => {
+          
+          // Create channel element and set a class to it
+          const channelElement = document.createElement("div");
+          channelElement.setAttribute("class", "channelElement");
+          
+          // Add content to each channel element
+          channelElement.innerHTML = `
+          <div class="picDiv">
+              <img src="${channel.image}", alt="Radio channel picture">
+          </div>
+  
+          <div class="rightDiv", style=background-color:#${channel.color}>
+  
+              <div class="upperRightDiv"> 
+                  <h1>${channel.name}</h1>
+                  <p>${channel.tagline}</p>
+              </div>
+  
+              <div class="lowerRightDiv">
+                  <audio controls><source src="${channel.liveaudio.url}" type="audio/mpeg"/></audio>
+              </div>
+          </div>
+          `;
+
+        // append each channel div to the container div
+        channelContainer.appendChild(channelElement);
+
+          // Hide all channels if inputfield is empty
+          if (inputValue.length <= 0) {
+            channelContainer.innerHTML = "";
+          }
+  })}
+    getData();
+  });
