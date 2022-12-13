@@ -38,6 +38,7 @@ fetch(channelsInfo)
             </div>
         </div>
         <div class="channels-descript"> <h4>${radioChannels.tagline}</h4> </div>`
+       /*  channels.style.backgroundColor = '#'+ radioChannels.color; */
     });   
 });
   
