@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+
+.channel {
+    display: flex;
+    flex-direction: row;
+    border: 4px solid black;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: 'Rubik Vinyl', cursive;
+}
+
+audio {
+    border: 3px solid black;
+}
+
+img {
+    width: 200px;
+    border-radius: 20px;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: auto;
+    margin-right: auto;
+}
