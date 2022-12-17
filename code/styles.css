@@ -1,0 +1,17 @@
+#channels {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .allChannels > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 35rem;
+    height: 10rem;
+    margin: 1em;
+    border-radius: 2rem;
+    background: rgb(219, 214, 214);
+  }
