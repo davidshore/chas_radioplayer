@@ -1,0 +1,27 @@
+.channel {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 24px;
+    width: 600px;
+}
+
+.channel img {
+    height: 250px;
+    width: 250px;
+}
+
+h1{
+    font-size: 200%;
+}
+
+.leftSide {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+    
+}
