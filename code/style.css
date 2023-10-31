@@ -12,11 +12,12 @@ h1 {
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
+    align-items: center;
 }
 
 .channel {
     width: 477.36px;
-    margin: auto;
+    /* margin: auto; */
     display: flex;
     border: 0.2rem solid black;
     align-items: center;

@@ -8,6 +8,9 @@
 // </audio>
 const placeholderChannel = document.querySelector('.placeholder')
 const channels = document.querySelector('#channels')
+const chooseChannel = document.querySelector('.choose-channel')
+const channelSelect = document.querySelector('#channel-select')
+const chosenChannel = document.querySelector('.chosen-channel')
 
 /* function createChannel(imgUrl, name, mp3Src, color) {
     const channel = document.createElement('div')
@@ -36,9 +39,21 @@ async function getData() {
 
         placeholderChannel.classList.add('hide')
 
-        for (let i = 0; i < data.channels.length; i++) {
-            const channel =
-            `<div class="channel" style="background-color:#${data.channels[i].color};">
+        for (let i = 0; i < 3; i++) {
+            const channel = document.createElement('div')
+            channel.setAttribute('class', 'channel')
+            channel.setAttribute('style', `background-color:#${data.channels[i].color};`)
+
+            channel.innerHTML = `<img src="${data.channels[i].image}" alt="${data.channels[i].name} logo">
+                <div class="player">
+                    <h2>${data.channels[i].name}</h2>
+                    <div class="description">
+                        <p class="tagline">${data.channels[i].tagline}</p>
+                    </div>
+                    <audio src="${data.channels[i].liveaudio.url}" type="audio/mpeg" controls></audio>
+                    </div>`
+
+            /* const channel = `<div class="channel" style="background-color:#${data.channels[i].color};">
                 <img src="${data.channels[i].image}" alt="${data.channels[i].name} logo">
                 <div class="player">
                     <h2>${data.channels[i].name}</h2>
@@ -46,12 +61,31 @@ async function getData() {
                         <p class="tagline">${data.channels[i].tagline}</p>
                     </div>
                     <audio src="${data.channels[i].liveaudio.url}" type="audio/mpeg" controls></audio>
-            </div>
-            </div>`/* createChannel(data.channels[i].image, data.channels[i].name, data.channels[i].liveaudio.url, data.channels[i].color) */
-            if (i < 3) {
-                channels.insertAdjacentHTML('beforeEnd', channel)
-            }
+                    </div>
+                </div>` */
+            channels.insertBefore(channel, chooseChannel)
+            /* createChannel(data.channels[i].image, data.channels[i].name, data.channels[i].liveaudio.url, data.channels[i].color) */
         }
+
+        chooseChannel.classList.remove('hide')
+
+        for (let i = 3; i < data.channels.length; i++) {
+            channelSelect.insertAdjacentHTML('beforeEnd', `<option value="${data.channels[i].name}">${data.channels[i].name}</option>`)
+        }
+
+        channelSelect.addEventListener('input', () => {
+            const channel = data.channels.filter(x => x.name === channelSelect.value)[0]
+            chosenChannel.innerHTML = `<div class="channel" style="background-color:#${channel.color};">
+                <img src="${channel.image}" alt="${channel.name} logo">
+                <div class="player">
+                  <h2>${channel.name}</h2>
+                    <div class="description">
+                        <p class="tagline">${channel.tagline}</p>
+                    </div>
+                    <audio src="${channel.liveaudio.url}" type="audio/mpeg" controls></audio>
+                    </div>
+                </div>`
+        })
     } else {
         console.log('HTTP error: ', response.status)
     }
