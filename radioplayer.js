@@ -28,7 +28,7 @@ const chosenChannel = document.querySelector('.chosen-channel')
 } */
 
 async function getData() {
-    const url = 'http://api.sr.se/api/v2/channels?format=json&size=100'
+    const url = 'https://api.sr.se/api/v2/channels?format=json&size=100'
 
     const response = await fetch(url)
     console.log(response)
