@@ -88,7 +88,7 @@ After completing this assignment you should be more comfortable using APIs, and 
 
 #### First stretch goal
 
-Design for zero data. Make your page look nice while the station list is loading by creating a "skeleton loader", like we discussed during the lecture. Consider using the Chrome [network throttler](https://developers.google.com/web/tools/chrome-devtools/network-performance/network-conditions) to simulate a slow connection and make it easier to test your code.
+Design for zero data. Make your page look nice while the station list is loading by creating a "skeleton loader". Consider using the Chrome [network throttler](https://developers.google.com/web/tools/chrome-devtools/network-performance/network-conditions) to simulate a slow connection and make it easier to test your code.
 
 #### Second stretch goal
 
